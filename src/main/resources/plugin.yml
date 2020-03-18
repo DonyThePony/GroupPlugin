@@ -14,9 +14,6 @@ commands:
   invitePlayerToGroup:
     description: Invite a player.
     usage: /<command> [playername]
-  declineGroupInvitation:
-    description: Decline a group invitation.
-    usage: /<command> [group id]
   viewGroup:
     description: Shows info for group.
     usage: /<command>
