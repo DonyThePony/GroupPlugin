@@ -1,0 +1,22 @@
+name: GroupPlugin
+version: 1.0
+main: de.donythepony.GroupPlugin
+api-version: 1.15
+depend: [SmartInvs]
+
+commands:
+  createGroup:
+    description: Creates a new group.
+    usage: /<command> [group name]
+  joinGroup:
+    description: Join a group.
+    usage: /<command> [group id]
+  invitePlayerToGroup:
+    description: Invite a player.
+    usage: /<command> [playername]
+  declineGroupInvitation:
+    description: Decline a group invitation.
+    usage: /<command> [group id]
+  viewGroup:
+    description: Shows info for group.
+    usage: /<command>
