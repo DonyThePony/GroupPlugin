@@ -11,7 +11,7 @@ public class GroupPlugin extends JavaPlugin {
 
         getCommand("createGroup").setExecutor(new CreateGroupCommand());
         getCommand("joinGroup").setExecutor(new JoinGroupCommand());
-        getCommand("invitePlayerToGroup").setExecutor(new InvitePlayerToGroupCommand());
+        getCommand("invitePlayerToGroup").setExecutor(new InviteGroupCommand());
         getCommand("declineGroupInvitation").setExecutor(new DeclineInvitationGroupCommand());
         getCommand("viewGroup").setExecutor(new ViewGroupCommand());
 

@@ -24,6 +24,8 @@ public class DeclineInvitationGroupCommand implements CommandExecutor {
                 GroupDeclineEvent event = new GroupDeclineEvent(player, group);
                 Bukkit.getPluginManager().callEvent(event);
                 return true;
+            } else {
+                player.sendMessage("There is no invitation.");
             }
         }
 

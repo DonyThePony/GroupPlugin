@@ -24,6 +24,8 @@ public class JoinGroupCommand implements CommandExecutor {
                 Bukkit.getPluginManager().callEvent(joinEvent);
                 group.addPlayer(player);
                 return true;
+            } else {
+                player.sendMessage("There is no invitation.");
             }
         }
 

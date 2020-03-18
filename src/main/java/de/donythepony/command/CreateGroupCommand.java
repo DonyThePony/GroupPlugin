@@ -15,6 +15,10 @@ public class CreateGroupCommand implements CommandExecutor {
 
         if(commandSender instanceof Player) {
             Player player = (Player) commandSender;
+            if(GroupManager.getInstance().getGroupByPlayer(player) != null) {
+                player.sendMessage("You're already in a group!");
+                return true;
+            }
             if(args.length > 0){
                 String groupName = args[0];
                 Group group = new Group(groupName, player);

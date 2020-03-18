@@ -24,11 +24,13 @@ public class InviteGroupCommand implements CommandExecutor {
                     if(group != null && group.getLeader().equals(player)) {
                         group.invitePlayer(target);
                     }
+                } else {
+                    player.sendMessage("This player does not exist.");
+                    return true;
                 }
-
                 return true;
             } else {
-                player.sendMessage("[GroupPlugin] Please enter a name for your group.");
+                player.sendMessage("[GroupPlugin] Please enter a player name.");
                 return false;
             }
         }

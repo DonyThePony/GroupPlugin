@@ -17,13 +17,17 @@ public class ViewGroupCommand implements CommandExecutor {
         if(commandSender instanceof Player) {
             Player player = (Player) commandSender;
             Group group = GroupManager.getInstance().getGroupByPlayer(player);
-            SmartInventory groupViewInventory = SmartInventory.builder()
-                    .id("ViewGroupInventory")
-                    .provider(new GroupViewInventory(group))
-                    .title(group.getName())
-                    .build();
+            if(group != null) {
+                SmartInventory groupViewInventory = SmartInventory.builder()
+                        .id("ViewGroupInventory")
+                        .provider(new GroupViewInventory(group))
+                        .title(group.getName())
+                        .build();
 
-            groupViewInventory.open(player);
+                groupViewInventory.open(player);
+            } else {
+                player.sendMessage("Your aren't in a group.");
+            }
         }
 
         return true;
