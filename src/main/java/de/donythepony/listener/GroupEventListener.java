@@ -5,7 +5,6 @@ import de.donythepony.event.GroupJoinEvent;
 import de.donythepony.structure.Group;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

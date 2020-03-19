@@ -3,8 +3,6 @@ package de.donythepony.structure;
 import de.donythepony.event.GroupInviteEvent;
 import de.donythepony.util.GroupManager;
 import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.ComponentBuilder;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -17,14 +15,14 @@ import java.util.UUID;
  */
 public class Group {
 
-    private GroupMemberList memberList = new GroupMemberList();
-    private LinkedList<Player> invitedList = new LinkedList<>();
+    private final GroupMemberList memberList = new GroupMemberList();
+    private final LinkedList<Player> invitedList = new LinkedList<>();
 
     private Player leader;
     private String name;
     private int level;
     private int maxSize;
-    private UUID id;
+    private final UUID id;
 
     public Group(String name, Player leader) {
         this.name = name;

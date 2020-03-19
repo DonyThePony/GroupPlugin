@@ -11,11 +11,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import java.util.Iterator;
+import java.util.Objects;
 
 public class GroupViewInventory implements InventoryProvider {
 
-    private Group group;
+    private final Group group;
 
     public GroupViewInventory(Group group) {
         this.group = group;
@@ -33,13 +33,11 @@ public class GroupViewInventory implements InventoryProvider {
 
         inventoryContents.newIterator("PlayerHeads", SlotIterator.Type.HORIZONTAL, SlotPos.of(1,1)).allowOverride(false);
         SlotIterator it = inventoryContents.iterator("PlayerHeads").get();
-        Iterator<Player> playerIt =  group.getAllMembers().iterator();
 
-        while(playerIt.hasNext()) {
-            Player currentPlayer = playerIt.next();
+        for(Player currentPlayer : group.getAllMembers()) {
             ItemStack headItemStack = new ItemStack(Material.PLAYER_HEAD);
             SkullMeta skullMeta = (SkullMeta) headItemStack.getItemMeta();
-            skullMeta.setDisplayName(currentPlayer.getDisplayName());
+            Objects.requireNonNull(skullMeta).setDisplayName(currentPlayer.getDisplayName());
             skullMeta.setOwningPlayer(currentPlayer);
             headItemStack.setItemMeta(skullMeta);
 

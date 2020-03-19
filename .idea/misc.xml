@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="de.donythepony.structure.Group maxSize" />
+    </entry_points>
+    <pattern value="de.donythepony.command.CreateGroupCommand" />
+    <pattern value="de.donythepony.listener.GroupEventListener" />
+    <pattern value="de.donythepony.event.GroupKickEvent" method="getGroup" />
+    <pattern value="de.donythepony.event.GroupInviteEvent" method="getHandlerList" />
+    <pattern value="de.donythepony.event.GroupJoinEvent" method="getHandlerList" />
+    <pattern value="de.donythepony.event.GroupKickEvent" method="getHandlerList" />
+    <pattern value="de.donythepony.event.GroupKickEvent" method="getInvitedPlayer" />
+    <pattern value="de.donythepony.structure.Group" method="getLevel" />
+    <pattern value="de.donythepony.structure.Group" method="getMaxSize" />
+    <pattern value="de.donythepony.structure.Group" method="getSize" />
+    <pattern value="de.donythepony.structure.Group" />
+    <pattern value="de.donythepony.event.GroupInviteEvent" />
+    <pattern value="de.donythepony.event.GroupJoinEvent" />
+    <pattern value="de.donythepony.event.GroupKickEvent" />
+    <pattern value="de.donythepony.event.GroupKickEvent" method="GroupKickEvent" />
+    <pattern value="de.donythepony.GroupPlugin" />
+    <pattern value="de.donythepony.command.InviteGroupCommand" />
+    <pattern value="de.donythepony.command.JoinGroupCommand" />
+    <pattern value="de.donythepony.command.ViewGroupCommand" />
+    <pattern value="de.donythepony.listener.GroupEventListener" method="onGroupInviteEvent" />
+    <pattern value="de.donythepony.listener.GroupEventListener" method="onGroupJoinEvent" />
+    <pattern value="de.donythepony.structure.Group" method="setLeader" />
+    <pattern value="de.donythepony.structure.Group" method="setLevel" />
+    <pattern value="de.donythepony.structure.Group" method="setName" />
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">

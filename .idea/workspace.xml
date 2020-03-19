@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.5034325" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="707a9a38-4e64-40d3-b182-831055159f52" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/GroupPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/GroupPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/CreateGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/CreateGroupCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/InviteGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/InviteGroupCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/JoinGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/JoinGroupCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/ViewGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/ViewGroupCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/inventory/GroupViewInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/inventory/GroupViewInventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/listener/GroupEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/listener/GroupEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/structure/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/structure/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/structure/GroupMemberList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/structure/GroupMemberList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/util/GroupManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/util/GroupManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +56,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
@@ -141,6 +147,14 @@
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1230" y="289" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1584561688938" />
+    <state x="788" y="449" key="#com.intellij.refactoring.turnRefsToSuper.TurnRefsToSuperDialog" timestamp="1584639843835">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="788" y="449" key="#com.intellij.refactoring.turnRefsToSuper.TurnRefsToSuperDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1584639843835" />
+    <state x="711" y="384" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584640396148">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="711" y="384" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1584640396148" />
     <state x="740" y="282" key="FileChooserDialogImpl" timestamp="1584543488189">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -175,10 +189,10 @@
     </state>
     <state x="-1144" y="305" key="chooseDestDirectoryDialog/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1584557319661" />
     <state x="776" y="305" key="chooseDestDirectoryDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584549506864" />
-    <state x="668" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1584623961153">
+    <state x="668" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1584639788514">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="668" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1584623961153" />
+    <state x="668" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1584639788514" />
     <state x="342" y="232" key="new project wizard" timestamp="1584544009987">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

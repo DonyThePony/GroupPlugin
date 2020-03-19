@@ -1,7 +1,7 @@
 name: GroupPlugin
-version: 1.0
+version: '1.0'
 main: de.donythepony.GroupPlugin
-api-version: 1.15
+api-version: '1.15'
 depend: [SmartInvs]
 
 commands:

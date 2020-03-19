@@ -1,6 +1,5 @@
 package de.donythepony.command;
 
-import de.donythepony.event.GroupInviteEvent;
 import de.donythepony.event.GroupJoinEvent;
 import de.donythepony.structure.Group;
 import de.donythepony.util.GroupManager;

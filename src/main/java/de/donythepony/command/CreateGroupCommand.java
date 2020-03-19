@@ -2,7 +2,6 @@ package de.donythepony.command;
 
 import de.donythepony.structure.Group;
 import de.donythepony.util.GroupManager;
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

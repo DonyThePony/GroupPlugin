@@ -12,7 +12,7 @@ public class GroupManager {
 
     private static GroupManager instance;
 
-    private LinkedList<Group> groupList = new LinkedList<>();
+    private final LinkedList<Group> groupList = new LinkedList<>();
 
     public static GroupManager getInstance() {
         if(instance == null) {
@@ -51,7 +51,7 @@ public class GroupManager {
     }
 
     public boolean doesGroupNameExist(String groupName) {
-        return getGroupByName(groupName) != null ? true : false;
+        return getGroupByName(groupName) != null;
     }
 
     public Group getGroupByName(String groupName) {
