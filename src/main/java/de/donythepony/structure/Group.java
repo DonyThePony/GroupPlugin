@@ -11,6 +11,10 @@ import org.bukkit.entity.Player;
 import java.util.LinkedList;
 import java.util.UUID;
 
+/**
+ * Represents the Group.
+ * A group has many properties and a Memberlist which contains all the players.
+ */
 public class Group {
 
     private GroupMemberList memberList = new GroupMemberList();
@@ -29,37 +33,70 @@ public class Group {
         id = UUID.randomUUID();
     }
 
-    public void invitePlayer(Player player) {
-        invitedList.add(player);
-        GroupInviteEvent inviteEvent = new GroupInviteEvent(player, this);
-        Bukkit.getPluginManager().callEvent(inviteEvent);
+    /**
+     * Invite a player to group.
+     * Only possible if the player isn't in a group.
+     * @param player
+     * @return if invitation was sent successfully
+     */
+    public boolean invitePlayer(Player player) {
+        if(GroupManager.getInstance().getGroupByPlayer(player) == null) {
+            invitedList.add(player);
+            GroupInviteEvent inviteEvent = new GroupInviteEvent(player, this);
+            Bukkit.getPluginManager().callEvent(inviteEvent);
+            return true;
+        } else {
+            return false;
+        }
     }
 
+    /**
+     * Adds a Player to a group and removes him from the invitation list.
+     * @param player
+     */
     public void addPlayer(Player player) {
         invitedList.remove(player);
         memberList.addPlayer(player);
     }
 
+    /**
+     * Sends a message to all Players in the Group.
+     * @param message
+     */
     public void notifyAllMembers(BaseComponent[] message) {
         memberList.notifyAllMembers(message);
     }
 
+    /**
+     * Checks if a player is already invited for this group.
+     * @param player
+     * @return true if the player was invited.
+     */
     public boolean isPlayerInvited(Player player) {
         return invitedList.contains(player);
     }
 
-    public void declinePlayer(Player player) {
-        invitedList.remove(player);
-    }
-
+    /**
+     * Checks if the Player is in this Group.
+     * @param player
+     * @return
+     */
     public boolean hasPlayer(Player player) {
         return memberList.hasPlayer(player);
     }
 
+    /**
+     *
+     * @return the leader of the Group
+     */
     public Player getLeader() {
         return leader;
     }
 
+    /**
+     * Sets a new leader for this group.
+     * @param leader
+     */
     public void setLeader(Player leader) {
         this.leader = leader;
     }

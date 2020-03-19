@@ -10,31 +10,42 @@ import org.bukkit.entity.Player;
 
 public class InviteGroupCommand implements CommandExecutor {
 
+    /**
+     * Command to send an invitation to a target.
+     * @param commandSender
+     * @param command
+     * @param label
+     * @param args
+     * @return
+     */
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
         if(commandSender instanceof Player) {
             Player player = (Player) commandSender;
             if(args.length > 0){
-                String playerName = args[0];
+                String playerName = args[0]; //Check if given Player exists
                 Player target = Bukkit.getPlayer(playerName);
 
                 if(target != null) {
                     Group group = GroupManager.getInstance().getGroupByPlayer(player);
-                    if(group != null && group.getLeader().equals(player)) {
-                        group.invitePlayer(target);
+                    if(group != null && group.getLeader().equals(player)) { //Check if group exist and sender equals leader
+                        if(!group.invitePlayer(target)) { //Check if invitation was successful
+                            player.sendMessage("Player " + target.getDisplayName() + " is already in a group.");
+                        }
+                        return true;
                     }
-                } else {
+                } else { //Error-Message Player couldn't be found
                     player.sendMessage("This player does not exist.");
-                    return true;
+                    return false;
                 }
-                return true;
-            } else {
+            } else { //Error-Message No player-name was given
                 player.sendMessage("[GroupPlugin] Please enter a player name.");
                 return false;
             }
+            return true;
         }
 
-        return true;
+        return false;
     }
 }

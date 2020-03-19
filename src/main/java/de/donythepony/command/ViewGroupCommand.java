@@ -11,13 +11,21 @@ import org.bukkit.entity.Player;
 
 public class ViewGroupCommand implements CommandExecutor {
 
+    /**
+     * Command for Group-View Panel.
+     * @param commandSender
+     * @param command
+     * @param label
+     * @param args
+     * @return
+     */
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
 
         if(commandSender instanceof Player) {
             Player player = (Player) commandSender;
             Group group = GroupManager.getInstance().getGroupByPlayer(player);
-            if(group != null) {
+            if(group != null) { //Check if Player is in a group
                 SmartInventory groupViewInventory = SmartInventory.builder()
                         .id("ViewGroupInventory")
                         .provider(new GroupViewInventory(group))
@@ -25,11 +33,12 @@ public class ViewGroupCommand implements CommandExecutor {
                         .build();
 
                 groupViewInventory.open(player);
-            } else {
+            } else { //If Group was not found => Error.
                 player.sendMessage("Your aren't in a group.");
             }
+            return true;
         }
 
-        return true;
+        return false;
     }
 }

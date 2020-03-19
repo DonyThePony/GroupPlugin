@@ -12,6 +12,11 @@ import org.bukkit.event.Listener;
 
 public class GroupEventListener implements Listener {
 
+    /**
+     * Handle Invite.
+     * Player who get's invited has to in no group.
+     * @param event
+     */
     @EventHandler
     public void onGroupInviteEvent(GroupInviteEvent event) {
         Player invitedPlayer = event.getInvitedPlayer();
@@ -26,6 +31,10 @@ public class GroupEventListener implements Listener {
         invitedPlayer.spigot().sendMessage(inviteMessage);
     }
 
+    /**
+     * Handle Player event when he joins the group.
+     * @param event
+     */
     @EventHandler
     public void onGroupJoinEvent(GroupJoinEvent event) {
         Player joinedPlayer = event.getJoinedPlayer();

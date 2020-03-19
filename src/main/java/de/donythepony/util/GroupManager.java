@@ -5,6 +5,9 @@ import org.bukkit.entity.Player;
 
 import java.util.LinkedList;
 
+/**
+ * This Utility Class helps to work with groups.
+ */
 public class GroupManager {
 
     private static GroupManager instance;
@@ -29,8 +32,12 @@ public class GroupManager {
         return null;
     }
 
-    public void addGroup(Group group) {
-        groupList.add(group);
+    public boolean addGroup(Group group) {
+        if(!groupList.contains(group)) {
+            groupList.add(group);
+            return true;
+        }
+        return false;
     }
 
     public Group getGroupByPlayer(Player player) {
@@ -40,6 +47,19 @@ public class GroupManager {
             }
         }
 
+        return null;
+    }
+
+    public boolean doesGroupNameExist(String groupName) {
+        return getGroupByName(groupName) != null ? true : false;
+    }
+
+    public Group getGroupByName(String groupName) {
+        for(Group group : groupList) {
+            if(group.getName().equals(groupName)) {
+                return group;
+            }
+        }
         return null;
     }
 }

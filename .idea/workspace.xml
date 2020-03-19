@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="707a9a38-4e64-40d3-b182-831055159f52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/GroupPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/GroupPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/DeclineInvitationGroupCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/event/GroupDeclineEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/CreateGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/CreateGroupCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/InviteGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/InviteGroupCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/JoinGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/JoinGroupCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/command/ViewGroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/command/ViewGroupCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/inventory/GroupViewInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/inventory/GroupViewInventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/listener/GroupEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/listener/GroupEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/structure/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/structure/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/donythepony/util/GroupManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/donythepony/util/GroupManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,14 +175,19 @@
     </state>
     <state x="-1144" y="305" key="chooseDestDirectoryDialog/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1584557319661" />
     <state x="776" y="305" key="chooseDestDirectoryDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584549506864" />
+    <state x="668" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1584623961153">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="668" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1584623961153" />
     <state x="342" y="232" key="new project wizard" timestamp="1584544009987">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="342" y="232" key="new project wizard/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584544009987" />
-    <state x="-1304" y="250" key="run.anything.popup" timestamp="1584553538322">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1584624249156">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1304" y="250" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1584553538322" />
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1050/-1920.0.1920.1080@0.0.1920.1050" timestamp="1584624249156" />
     <state x="-1297" y="235" key="search.everywhere.popup" timestamp="1584552874091">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>

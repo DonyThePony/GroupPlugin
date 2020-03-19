@@ -21,6 +21,12 @@ public class GroupViewInventory implements InventoryProvider {
         this.group = group;
     }
 
+    /**
+     * Build menu for Group-Member.
+     * With head of every member from the given group.
+     * @param player
+     * @param inventoryContents
+     */
     @Override
     public void init(Player player, InventoryContents inventoryContents) {
         inventoryContents.fillBorders(ClickableItem.empty(new ItemStack(Material.GLASS_PANE)));
