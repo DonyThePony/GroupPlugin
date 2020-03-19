@@ -1,8 +1,8 @@
 package de.donythepony.command;
 
+import de.donythepony.GroupPlugin;
 import de.donythepony.event.GroupJoinEvent;
 import de.donythepony.structure.Group;
-import de.donythepony.util.GroupManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,7 +24,7 @@ public class JoinGroupCommand implements CommandExecutor {
         if(commandSender instanceof Player) {
             Player player = (Player) commandSender;
             String groupId = args[0];
-            Group group = GroupManager.getInstance().getGroupById(groupId);
+            Group group = GroupPlugin.groupManager.getGroupById(groupId);
 
             if(group != null && group.isPlayerInvited(player)) { //Check if the player is invited to the group.
                 GroupJoinEvent joinEvent = new GroupJoinEvent(player, group);

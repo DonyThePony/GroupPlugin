@@ -1,7 +1,7 @@
 package de.donythepony.command;
 
+import de.donythepony.GroupPlugin;
 import de.donythepony.structure.Group;
-import de.donythepony.util.GroupManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,19 +23,18 @@ public class CreateGroupCommand implements CommandExecutor {
 
         if(commandSender instanceof Player) {
             Player player = (Player) commandSender;
-            if(GroupManager.getInstance().getGroupByPlayer(player) != null) { //Check if player is in a group.
+            if(GroupPlugin.groupManager.getGroupByPlayer(player) != null) { //Check if player is in a group.
                 player.sendMessage("You're already in a group!");
                 return true;
             }
             if(args.length > 0){ //Check given params
                 String groupName = args[0];
-                GroupManager groupManager = GroupManager.getInstance();
-                if(groupManager.doesGroupNameExist(groupName)) { //Check if name is already taken
+                if(GroupPlugin.groupManager.doesGroupNameExist(groupName)) { //Check if name is already taken
                     player.sendMessage("Your desired group name '"+groupName+"' is already taken.");
                     return true;
                 }
                 Group group = new Group(groupName, player);
-                if (groupManager.addGroup(group)) { //Check if the group already exists
+                if (GroupPlugin.groupManager.addGroup(group)) { //Check if the group already exists
                     System.out.println("[GroupPlugin] The group name '"+groupName+"' was created.");
                     return true;
                 } else { //Error-Message if the group couldn't be created.

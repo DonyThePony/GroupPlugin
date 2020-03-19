@@ -1,7 +1,8 @@
 package de.donythepony.command;
 
+import de.donythepony.GroupPlugin;
+import de.donythepony.event.GroupInviteEvent;
 import de.donythepony.structure.Group;
-import de.donythepony.util.GroupManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,10 +29,13 @@ public class InviteGroupCommand implements CommandExecutor {
                 Player target = Bukkit.getPlayer(playerName);
 
                 if(target != null) {
-                    Group group = GroupManager.getInstance().getGroupByPlayer(player);
+                    Group group = GroupPlugin.groupManager.getGroupByPlayer(player);
                     if(group != null && group.getLeader().equals(player)) { //Check if group exist and sender equals leader
                         if(!group.invitePlayer(target)) { //Check if invitation was successful
                             player.sendMessage("Player " + target.getDisplayName() + " is already in a group.");
+                        } else {
+                            GroupInviteEvent inviteEvent = new GroupInviteEvent(player, group);
+                            Bukkit.getPluginManager().callEvent(inviteEvent);
                         }
                         return true;
                     }

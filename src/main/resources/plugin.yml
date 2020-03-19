@@ -2,7 +2,7 @@ name: GroupPlugin
 version: '1.0'
 main: de.donythepony.GroupPlugin
 api-version: '1.15'
-depend: [SmartInvs]
+depend: [SmartInvs,GroupManager]
 
 commands:
   createGroup:

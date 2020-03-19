@@ -1,11 +1,15 @@
 package de.donythepony;
 import de.donythepony.command.*;
 import de.donythepony.listener.GroupEventListener;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 
 public class GroupPlugin extends JavaPlugin {
+
+    public static GroupManager groupManager = (GroupManager) Bukkit.getServer().getPluginManager().getPlugin("GroupManager");
 
     @Override
     public void onEnable() {
