@@ -17,3 +17,6 @@ commands:
   viewGroup:
     description: Shows info for group.
     usage: /<command>
+  leaderPanel:
+    description: Shows Leader-Panel for group.
+    usage: /<command>

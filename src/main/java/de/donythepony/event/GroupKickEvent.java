@@ -9,11 +9,11 @@ public class GroupKickEvent extends Event {
 
     private static final HandlerList HANDLER_LIST = new HandlerList();
 
-    private final Player invitedPlayer;
+    private final Player kickedPlayer;
     private final Group group;
 
-    public GroupKickEvent(Player invitedPlayer, Group group) {
-        this.invitedPlayer = invitedPlayer;
+    public GroupKickEvent(Player kickedPlayer, Group group) {
+        this.kickedPlayer = kickedPlayer;
         this.group = group;
     }
 
@@ -26,8 +26,8 @@ public class GroupKickEvent extends Event {
         return HANDLER_LIST;
     }
 
-    public Player getInvitedPlayer() {
-        return invitedPlayer;
+    public Player getKickedPlayer() {
+        return kickedPlayer;
     }
 
     public Group getGroup() {

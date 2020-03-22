@@ -20,6 +20,7 @@ public class GroupPlugin extends JavaPlugin {
         Objects.requireNonNull(getCommand("joinGroup")).setExecutor(new JoinGroupCommand());
         Objects.requireNonNull(getCommand("invitePlayerToGroup")).setExecutor(new InviteGroupCommand());
         Objects.requireNonNull(getCommand("viewGroup")).setExecutor(new ViewGroupCommand());
+        Objects.requireNonNull(getCommand("leaderPanel")).setExecutor(new ViewLeaderPanelGroupCommand());
 
         getServer().getPluginManager().registerEvents(new GroupEventListener(), this);
     }

@@ -1,13 +1,21 @@
 package de.donythepony.listener;
 
+import de.donythepony.GroupPlugin;
 import de.donythepony.event.GroupInviteEvent;
 import de.donythepony.event.GroupJoinEvent;
+import de.donythepony.event.GroupKickEvent;
+import de.donythepony.group.api.event.GroupAddExpEvent;
 import de.donythepony.group.api.structure.Group;
+import de.donythepony.group.api.structure.GroupPlayer;
+import de.donythepony.group.api.util.GroupManager;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.ExpBottleEvent;
+import org.bukkit.event.player.PlayerExpChangeEvent;
 
 public class GroupEventListener implements Listener {
 
@@ -44,5 +52,33 @@ public class GroupEventListener implements Listener {
                 .color(ChatColor.DARK_GREEN);
 
         group.notifyAllMembers(message.create());
+    }
+
+    @EventHandler
+    public void onGroupKickEvent(GroupKickEvent event) {
+        Player kickedPlayer = event.getKickedPlayer();
+        Group group = event.getGroup();
+
+        ComponentBuilder kickMessage = new ComponentBuilder("You have been kicked by ")
+                .color(ChatColor.RED).bold(true).append(group.getLeader().getDisplayName())
+                .color(ChatColor.RED);
+
+        kickedPlayer.spigot().sendMessage(kickMessage.create());
+
+        ComponentBuilder groupMessage = new ComponentBuilder(kickedPlayer.getDisplayName() + " have been kicked by ")
+                .color(ChatColor.RED).bold(true).append(group.getLeader().getDisplayName())
+                .color(ChatColor.RED);
+
+        group.notifyAllMembers(groupMessage.create());
+    }
+
+    @EventHandler
+    public void onPlayerCollectExp(PlayerExpChangeEvent event) {
+        Player player = event.getPlayer();
+        Group group = GroupPlugin.groupManager.getGroupByPlayer(player);
+        if(group != null) {
+            GroupAddExpEvent groupAddExpEvent = new GroupAddExpEvent(player, group, event.getAmount());
+            Bukkit.getPluginManager().callEvent(groupAddExpEvent);
+        }
     }
 }
