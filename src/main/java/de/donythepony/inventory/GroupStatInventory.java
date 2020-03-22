@@ -36,14 +36,21 @@ public class GroupStatInventory implements InventoryProvider {
         GroupPlayer groupPlayer = group.getGroupPlayerFromPlayer(player);
         List<ItemStack> itemStackList = new LinkedList<>();
 
-        //Show Exp
+        //Exp
         ItemStack expInfo = new ItemStack(Material.EXPERIENCE_BOTTLE);
         ItemMeta expInfoMeta = expInfo.getItemMeta();
         expInfoMeta.setLore(List.of("Collected Exp: " + groupPlayer.getCollectedExp()));
         expInfoMeta.setDisplayName("Collected Exp");
         expInfo.setItemMeta(expInfoMeta);
-
         itemStackList.add(expInfo);
+
+        //Kills
+        ItemStack killInfo = new ItemStack(Material.NAME_TAG);
+        ItemMeta killInfoMeta = killInfo.getItemMeta();
+        killInfoMeta.setLore(List.of("Kills: " + groupPlayer.getKills(), "Player-Kills: " + groupPlayer.getPlayerKills()));
+        killInfoMeta.setDisplayName("Kill-Stats");
+        killInfo.setItemMeta(killInfoMeta);
+        itemStackList.add(killInfo);
 
         for(ItemStack itemStack : itemStackList) {
             it.next();

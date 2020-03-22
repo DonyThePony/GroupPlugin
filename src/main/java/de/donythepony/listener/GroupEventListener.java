@@ -5,15 +5,18 @@ import de.donythepony.event.GroupInviteEvent;
 import de.donythepony.event.GroupJoinEvent;
 import de.donythepony.event.GroupKickEvent;
 import de.donythepony.group.api.event.GroupAddExpEvent;
+import de.donythepony.group.api.event.GroupKillEvent;
 import de.donythepony.group.api.structure.Group;
 import de.donythepony.group.api.structure.GroupPlayer;
 import de.donythepony.group.api.util.GroupManager;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.ExpBottleEvent;
 import org.bukkit.event.player.PlayerExpChangeEvent;
 
@@ -79,6 +82,19 @@ public class GroupEventListener implements Listener {
         if(group != null) {
             GroupAddExpEvent groupAddExpEvent = new GroupAddExpEvent(player, group, event.getAmount());
             Bukkit.getPluginManager().callEvent(groupAddExpEvent);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerKill(EntityDeathEvent event) {
+        Player killer = event.getEntity().getKiller();
+        if(killer != null) {
+            Group group = GroupPlugin.groupManager.getGroupByPlayer(killer);
+            if(group != null) {
+                Entity victim = event.getEntity();
+                GroupKillEvent killEvent = new GroupKillEvent(killer, victim, group);
+                Bukkit.getPluginManager().callEvent(killEvent);
+            }
         }
     }
 }
