@@ -4,6 +4,7 @@ import de.donythepony.event.GroupInviteEvent;
 import de.donythepony.event.GroupKickEvent;
 import de.donythepony.group.api.structure.Group;
 import fr.minuskube.inv.ClickableItem;
+import fr.minuskube.inv.InventoryManager;
 import fr.minuskube.inv.SmartInventory;
 import fr.minuskube.inv.content.InventoryContents;
 import fr.minuskube.inv.content.InventoryProvider;
@@ -68,7 +69,7 @@ public class GroupLeaderPanelInventory implements InventoryProvider {
                     GroupKickEvent kickEvent = new GroupKickEvent(currentPlayer, group);
                     Bukkit.getPluginManager().callEvent(kickEvent);
                 } else if(event.isLeftClick()) {
-                    groupLeader.closeInventory();
+                    //groupLeader.closeInventory();
 
                     SmartInventory groupStatInventory = SmartInventory.builder()
                             .id("ViewGroupInventory")
