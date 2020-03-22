@@ -76,10 +76,12 @@ public class GroupEventListener implements Listener {
     @EventHandler
     public void onPlayerCollectExp(PlayerExpChangeEvent event) {
         Player player = event.getPlayer();
+        int amount = event.getAmount();
         Group group = GroupPlugin.groupManager.getGroupByPlayer(player);
         if(group != null) {
             GroupAddExpEvent groupAddExpEvent = new GroupAddExpEvent(player, group, event.getAmount());
             Bukkit.getPluginManager().callEvent(groupAddExpEvent);
+            event.setAmount(0);
         }
     }
 
