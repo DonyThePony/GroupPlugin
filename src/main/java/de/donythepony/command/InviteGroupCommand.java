@@ -2,7 +2,7 @@ package de.donythepony.command;
 
 import de.donythepony.GroupPlugin;
 import de.donythepony.event.GroupInviteEvent;
-import de.donythepony.structure.Group;
+import de.donythepony.group.api.structure.Group;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

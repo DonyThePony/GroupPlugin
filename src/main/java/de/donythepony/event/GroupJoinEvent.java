@@ -1,6 +1,6 @@
 package de.donythepony.event;
 
-import de.donythepony.structure.Group;
+import de.donythepony.group.api.structure.Group;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;

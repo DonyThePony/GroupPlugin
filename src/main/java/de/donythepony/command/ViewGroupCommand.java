@@ -1,8 +1,8 @@
 package de.donythepony.command;
 
 import de.donythepony.GroupPlugin;
+import de.donythepony.group.api.structure.Group;
 import de.donythepony.inventory.GroupViewInventory;
-import de.donythepony.structure.Group;
 import fr.minuskube.inv.SmartInventory;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -1,6 +1,6 @@
 package de.donythepony.inventory;
 
-import de.donythepony.structure.Group;
+import de.donythepony.group.api.structure.Group;
 import fr.minuskube.inv.ClickableItem;
 import fr.minuskube.inv.content.InventoryContents;
 import fr.minuskube.inv.content.InventoryProvider;

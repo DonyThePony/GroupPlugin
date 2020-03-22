@@ -1,5 +1,6 @@
 package de.donythepony;
 import de.donythepony.command.*;
+import de.donythepony.group.api.util.GroupManager;
 import de.donythepony.listener.GroupEventListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;

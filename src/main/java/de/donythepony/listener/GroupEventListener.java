@@ -2,7 +2,7 @@ package de.donythepony.listener;
 
 import de.donythepony.event.GroupInviteEvent;
 import de.donythepony.event.GroupJoinEvent;
-import de.donythepony.structure.Group;
+import de.donythepony.group.api.structure.Group;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
 import org.bukkit.entity.Player;
